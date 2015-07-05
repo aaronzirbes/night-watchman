@@ -1,12 +1,15 @@
-server.port: 8080
-management.port: 8099
+spring:
+  profiles.active: deployed
+  groovy.template.check-template-location: false
+server:
+  port: 8080
+management:
+  port: 8099
+multipart:
+  maxFileSize: 1024KB
+  maxRequestSize: 1024KB
 hidEdgePro:
   username: admin
-  password: S3cret?
-  devices:
-    test:
-      description: Test Unit
-      url: http://192.168.1.111
 aws:
   region: us-east-1
   sqs:
@@ -15,4 +18,33 @@ aws:
     control:
       push: hidcmdresponse
       pull: hidcmdrequest
-
+---
+spring:
+  profiles: deployed
+hidEdgePro:
+  password: S3cret?
+  devices:
+    main:
+      description: Coop Door
+      url: http://192.169.0.1
+    dock:
+      description: Loading Dock
+      url: http://192.169.0.2
+---
+spring:
+  profiles: dev
+hidEdgePro:
+  password: Password1
+  devices:
+    coop:
+      description: Coop Door
+      url: http://localhost
+    external:
+      description: Loading Bay
+      url: http://localhost
+aws.sqs:
+  state:
+    push: testdoorstate
+  control:
+    push: testcmdresponse
+    pull: testcmdrequest

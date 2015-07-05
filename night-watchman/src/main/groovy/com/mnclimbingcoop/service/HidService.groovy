@@ -46,7 +46,7 @@ class HidService {
                 apis[name] = new ClientBuilder().withEndpoint(device.url)
                                                 .withAuthentication(username, password)
                                                 .build(HidEdgeProApi)
-                hidStates[name] = new EdgeSoloState()
+                hidStates[name] = new EdgeSoloState(doorName: name)
             }
         }
 

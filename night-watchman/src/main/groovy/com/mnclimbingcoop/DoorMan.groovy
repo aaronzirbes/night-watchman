@@ -48,15 +48,15 @@ class DoorMan {
     }
 
     /** Check for events every 3 seconds */
-    @Scheduled(fixedDelay = 3000l)
+    //@Scheduled(fixedDelay = 3000l)
     void monitor() {
         // This should probably be checked more often (every 3 sec?)
-        // eventService.list()
+        eventService.list()
         // Send via SQS
     }
 
     /** Check the doors every 20 seconds */
-    @Scheduled(fixedDelay = 20000l)
+    //@Scheduled(fixedDelay = 20000l)
     void secure() {
         // This should probably be checked more often (every 20 sec?)
         doorService.list()
@@ -64,8 +64,9 @@ class DoorMan {
     }
 
     /** Wait 10 minutes before each execution */
-    @Scheduled(fixedDelay = 600000l)
+    //@Scheduled(fixedDelay = 600000l)
     void survey() {
+
         // Really only update these once...
         alertService.list()
         cardFormatService.list()

@@ -6,12 +6,6 @@ targetCompatibility = "1.8"
 version = "${version}"
 group = "${group}"
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-}
-
 jar {
     baseName = 'hid-api'
     version =  '1.0.0'

@@ -1,6 +1,7 @@
 package com.mnclimbingcoop.client
 
 import com.fasterxml.jackson.databind.ObjectMapper
+
 import com.mnclimbingcoop.ObjectMapperBuilder
 
 import groovy.transform.CompileStatic
