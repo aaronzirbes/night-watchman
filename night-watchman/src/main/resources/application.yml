@@ -13,11 +13,7 @@ hidEdgePro:
 aws:
   region: us-east-1
   sqs:
-    state:
-      push: hiddoorstate
-    control:
-      push: hidcmdresponse
-      pull: hidcmdrequest
+    queue: mncc-state
 ---
 spring:
   profiles: deployed

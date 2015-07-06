@@ -4,6 +4,8 @@ buildscript {
     }
 }
 
+apply plugin: "idea"
+
 repositories {
     jcenter()
 }

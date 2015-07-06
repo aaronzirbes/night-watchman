@@ -1,3 +1,9 @@
 .gradle/
 .java-version
 build/
+*.swp
+.idea/
+*.iml
+*.ipr
+*.iws
+data/
